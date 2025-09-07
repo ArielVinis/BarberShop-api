@@ -10,6 +10,7 @@ public class BarberApplication {
 		SpringApplication.run(BarberApplication.class, args);
 
 		System.out.println("Documentation with Swagger: http://localhost:8080/swagger-ui.html.");
+		System.out.println("Tudo OK");
 	}
 
 }
