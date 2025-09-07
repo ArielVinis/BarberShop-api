@@ -10,7 +10,7 @@ public class Home {
   public String home() {
     return """
               Bem-vindo à página Home.
-              Para ver a documentação, acesse o Swagger.
+              \nPara ver a documentação, acesse o Swagger.
             """;
   }
 }
