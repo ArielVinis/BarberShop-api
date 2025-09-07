@@ -33,7 +33,7 @@ public class UserController {
 
   @PutMapping
   public ResponseEntity<User> updateById(@RequestParam Integer id, @RequestBody User user) {
-    userService.updateById(id, user);
+    userService.update(id, user);
     return ResponseEntity.ok().build();
   }
 
