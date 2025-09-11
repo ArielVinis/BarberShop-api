@@ -19,7 +19,7 @@ public class UserService {
   }
 
   public void update(Integer id, User user) {
-    User userEntity = userRepository.findById(id).orElseThrow(() -> new RuntimeException("Usuario não encontrado."));
+    User userEntity = userRepository.findById(id).orElseThrow(() -> new RuntimeException("Usuário não encontrado."));
     User userUpdated = User.builder()
             .email(user.getEmail() != null ?
                     user.getEmail() : userEntity.getEmail())
@@ -33,6 +33,12 @@ public class UserService {
 
   public List<User> findAll() {
     return userRepository.findAll();
+  }
+
+  public User findById(Integer id) {
+    return userRepository.findById(id).orElseThrow(
+            () -> new RuntimeException("Id não encontrado.")
+    );
   }
 
   public User findByEmail(String email) {
