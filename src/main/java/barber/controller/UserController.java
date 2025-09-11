@@ -20,6 +20,11 @@ public class UserController {
     return ResponseEntity.ok().body(userService.findAll());
   }
 
+  @GetMapping("/{id}")
+  public ResponseEntity<User> findById(@PathVariable Integer id) {
+    return ResponseEntity.ok().body(userService.findById(id));
+  }
+
   @GetMapping("/{email}")
   public ResponseEntity<User> findByEmail(@PathVariable String email) {
     return ResponseEntity.ok(userService.findByEmail(email));
@@ -31,14 +36,15 @@ public class UserController {
     return ResponseEntity.ok(saved);
   }
 
-  @PutMapping
-  public ResponseEntity<User> updateById(@RequestParam Integer id, @RequestBody User user) {
+  @PutMapping("/{id}")
+  public ResponseEntity<User> updateById(@PathVariable Integer id, @RequestBody User user) {
     userService.update(id, user);
     return ResponseEntity.ok().build();
   }
 
   @DeleteMapping
-  public void deleteByEmail(@RequestParam String email) {
+  public ResponseEntity<User> deleteByEmail(@RequestParam String email) {
     userService.deleteByEmail(email);
+    return ResponseEntity.ok().build();
   }
 }
