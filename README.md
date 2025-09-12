@@ -33,7 +33,7 @@ Base path: `/users`
 - `GET /users` — lista todos os usuários
 - `GET /users/{email}` — busca por e-mail
 - `POST /users` — cria usuário
-- `PUT /users?id={id}` — atualiza nome/e-mail pelo id
+- `PUT /users/{id}` — atualiza nome/e-mail pelo id
 - `DELETE /users?email={email}` — remove por e-mail
 
 ### Exemplo de payload (POST /users)
